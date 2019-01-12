@@ -1,0 +1,64 @@
+<main class="container calculator-layout">
+  <textarea class="calculator-display" rows="1" disabled>{{
+    displayNum
+  }}</textarea>
+  <div class="row justify-content-center align-items-center">
+    <button type="button" class="btn btn-success" (click)="selectNum('7')">
+      7
+    </button>
+    <button type="button" class="btn btn-success" (click)="selectNum('8')">
+      8
+    </button>
+    <button type="button" class="btn btn-success" (click)="selectNum('9')">
+      9
+    </button>
+    <button type="button" class="btn btn-warning" (click)="selectOperator('+')">
+      +
+    </button>
+  </div>
+  <div class="row justify-content-center align-items-center">
+    <button type="button" class="btn btn-success" (click)="selectNum('5')">
+      5
+    </button>
+    <button type="button" class="btn btn-success" (click)="selectNum('6')">
+      6
+    </button>
+    <button type="button" class="btn btn-success" (click)="selectNum('7')">
+      7
+    </button>
+    <button type="button" class="btn btn-warning" (click)="selectOperator('-')">
+      -
+    </button>
+  </div>
+  <div class="row justify-content-center align-items-center">
+    <button type="button" class="btn btn-success" (click)="selectNum('1')">
+      1
+    </button>
+    <button type="button" class="btn btn-success" (click)="selectNum('2')">
+      2
+    </button>
+    <button type="button" class="btn btn-success" (click)="selectNum('3')">
+      3
+    </button>
+    <button type="button" class="btn btn-warning" (click)="selectOperator('*')">
+      *
+    </button>
+  </div>
+  <div class="row justify-content-center align-items-center">
+    <button type="button" class="btn btn-success" (click)="selectNum('0')">
+      0
+    </button>
+    <button type="button" class="btn btn-danger" (click)="clearAll()">C</button>
+    <button type="button" class="btn btn-primary" (click)="calculate()">
+      =
+    </button>
+    <button type="button" class="btn btn-warning" (click)="selectOperator('/')">
+      /
+    </button>
+  </div>
+  <div class="warning-message" *ngIf="displayError">No numbers provided.</div>
+  <div class="warning-message" *ngIf="operatorError">
+    Invalid. You cannot continue to calculate retrieved results or operate
+    without numbers selected.
+  </div>
+</main>
